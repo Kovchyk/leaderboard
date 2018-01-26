@@ -1,1 +1,16 @@
-/* You can add global styles to this file, and also import other style files */
+@font-face {
+    font-family: 'BenchNine';
+      src: url('./fonts/BenchNine-Regular.eot');
+      src: url('./fonts/BenchNine-Regular.eot?#iefix') format('embedded-opentype'),
+           url('./fonts/BenchNine-Regular.ttf') format('truetype');
+    font-style: normal;
+    font-weight: bold;
+  }
+  
+body {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: #333333;
+    background-color: #e5e7e6;
+}
