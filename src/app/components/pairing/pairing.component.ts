@@ -3,7 +3,7 @@ import { FetchDataService } from '../../services/fetch-data.service';
 import { ActivatedRoute } from '@angular/router';
 
 @Component({
-  selector: 'pairing',
+  selector: 'app-pairing',
   templateUrl: './pairing.component.html',
   styleUrls: ['./pairing.component.css']
 })
@@ -15,7 +15,7 @@ export class PairingComponent implements OnInit {
 
   getTournamentDetails() {
     this.route.data.subscribe(data => {
-      this.tournamentDetails = data.response; 
+      this.tournamentDetails = data.response;
     });
   }
 

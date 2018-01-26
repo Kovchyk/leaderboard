@@ -4,7 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Subscription } from 'rxjs/Subscription';
 
 @Component({
-  selector: 'content-pairing',
+  selector: 'app-content-pairing',
   templateUrl: './content-pairing.component.html',
   styleUrls: ['./content-pairing.component.css']
 })

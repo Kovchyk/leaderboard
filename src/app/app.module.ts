@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { HttpClientModule }   from '@angular/common/http';
-import { FormsModule }   from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderPairingComponent } from './components/header-pairing/header-pairing.component';
@@ -18,9 +18,9 @@ import { ScoringResultComponent } from './components/scoring-result/scoring-resu
 import { ContentScoringResultComponent } from './components/content-scoring-result/content-scoring-result.component';
 import { TournamentLeaderboardDetailsResolveService } from './services/tournament-leaderboard-details-resolve.service';
 
-const appRoutes: Routes =[
-  { path: '', 
-    component: PairingComponent, 
+const appRoutes: Routes = [
+  { path: '',
+    component: PairingComponent,
     resolve: {
       response: TournamentDetailsResolve
     }
@@ -31,7 +31,7 @@ const appRoutes: Routes =[
       response: TournamentLeaderboardDetailsResolveService
     }
   },
-  { path: '**', redirectTo:'/' }
+  { path: '**', redirectTo: '/' }
 ];
 
 @NgModule({
@@ -47,7 +47,7 @@ const appRoutes: Routes =[
     SelectComponent
   ],
   imports: [
-    BrowserModule, 
+    BrowserModule,
     RouterModule.forRoot(appRoutes),
     HttpClientModule,
     FormsModule
