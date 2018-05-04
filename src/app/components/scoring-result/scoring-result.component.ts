@@ -10,11 +10,11 @@ import { ActivatedRoute } from '@angular/router';
 export class ScoringResultComponent implements OnInit {
 
   constructor(private fetchDataService: FetchDataService, private route: ActivatedRoute) { }
-  tournamentDetails: any;
+  leaderBoardDetails: any;
 
   getTournamentLeaderBoardDetails() {
     this.route.data.subscribe(data => {
-      this.tournamentDetails = data.response; 
+      this.leaderBoardDetails = data.response;
     });
   }
 

@@ -15,7 +15,7 @@ export class PairingComponent implements OnInit {
 
   getTournamentDetails() {
     this.route.data.subscribe(data => {
-      this.tournamentDetails = data.response; 
+      this.tournamentDetails = data.response;
     });
   }
 

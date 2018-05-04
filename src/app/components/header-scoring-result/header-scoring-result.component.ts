@@ -10,8 +10,8 @@ import { Location } from '@angular/common';
 export class HeaderScoringResultComponent implements OnInit {
 
   constructor(private location: Location) { }
-  
-  @Input() tournamentDetails: any;
+
+  @Input() leaderBoardDetails: any;
   startDate: any = 'JANUARY 10';
   endDate: any = '12, 2018';
   name: string = 'ARTEM TEST 3 ROUND 9 HOLES';
@@ -24,11 +24,11 @@ export class HeaderScoringResultComponent implements OnInit {
 
   ngOnInit() {
     let dummyDate = 171215;
-    this.name = this.tournamentDetails.name ? this.tournamentDetails.name : this.name;
-    this.startDate = this.tournamentDetails.startDate ? moment(this.tournamentDetails.startDate, 'YYMMDD').format('MMMM DD') : moment(dummyDate, 'YYMMDD').format('MMMM DD');
-    this.endDate = this.tournamentDetails.endDate ? moment(this.tournamentDetails.endDate, 'YYMMDD').format('DD, YYYY') : moment(dummyDate, 'YYMMDD').format('DD, YYYY');
-    this.roundList = this.tournamentDetails.resultList;
-    this.courseName = this.tournamentDetails.courseName;
+    this.name = this.leaderBoardDetails.name ? this.leaderBoardDetails.name : this.name;
+    this.startDate = this.leaderBoardDetails.startDate ? moment(this.leaderBoardDetails.startDate, 'YYMMDD').format('MMMM DD') : moment(dummyDate, 'YYMMDD').format('MMMM DD');
+    this.endDate = this.leaderBoardDetails.endDate ? moment(this.leaderBoardDetails.endDate, 'YYMMDD').format('DD, YYYY') : moment(dummyDate, 'YYMMDD').format('DD, YYYY');
+    this.roundList = this.leaderBoardDetails.resultList;
+    this.courseName = this.leaderBoardDetails.courseName;
   }
 
 }

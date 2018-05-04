@@ -6,54 +6,35 @@ import { FormsModule }   from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { HeaderPairingComponent } from './components/header-pairing/header-pairing.component';
-import { HeaderScoringResultComponent } from './components/header-scoring-result/header-scoring-result.component';
+
 import { PairingComponent } from './components/pairing/pairing.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SelectComponent } from './components/select/select.component';
 
+import { AppRoutingModule } from './app-routing/app-routing.module';
+import { ScoringResultModule } from './scoring-result/scoring-result.module';
 import { FetchDataService } from './services/fetch-data.service';
-import { TournamentDetailsResolve } from './services/tournament-details-resolve.service';
-import { ContentPairingComponent } from './components/content-pairing/content-pairing.component';
-import { ScoringResultComponent } from './components/scoring-result/scoring-result.component';
-import { ContentScoringResultComponent } from './components/content-scoring-result/content-scoring-result.component';
-import { TournamentLeaderboardDetailsResolveService } from './services/tournament-leaderboard-details-resolve.service';
 
-const appRoutes: Routes =[
-  { path: '', 
-    component: PairingComponent, 
-    resolve: {
-      response: TournamentDetailsResolve
-    }
-  },
-  { path: 'scoring-results',
-    component: ScoringResultComponent,
-    resolve: {
-      response: TournamentLeaderboardDetailsResolveService
-    }
-  },
-  { path: '**', redirectTo:'/' }
-];
+import { ContentPairingComponent } from './components/content-pairing/content-pairing.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderPairingComponent,
-    HeaderScoringResultComponent,
     PairingComponent,
     ContentPairingComponent,
-    ScoringResultComponent,
-    ContentScoringResultComponent,
     FooterComponent,
     SelectComponent
   ],
   imports: [
-    BrowserModule, 
-    RouterModule.forRoot(appRoutes),
+    BrowserModule,
     HttpClientModule,
+    AppRoutingModule,
+    ScoringResultModule,
     FormsModule
   ],
   providers: [
-    FetchDataService, TournamentDetailsResolve, TournamentLeaderboardDetailsResolveService
+    FetchDataService
   ],
   bootstrap: [AppComponent]
 })
