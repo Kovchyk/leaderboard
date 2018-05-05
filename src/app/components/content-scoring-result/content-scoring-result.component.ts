@@ -1,7 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 
 @Component({
-  selector: 'content-scoring-result',
+  selector: 'app-content-scoring-result',
   templateUrl: './content-scoring-result.component.html',
   styleUrls: ['./content-scoring-result.component.css']
 })

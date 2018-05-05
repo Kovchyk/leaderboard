@@ -1,9 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
-import { Location } from '@angular/common'; 
+import { Location } from '@angular/common';
 
 @Component({
-  selector: 'header-scoring-result',
+  selector: 'app-header-scoring-result',
   templateUrl: './header-scoring-result.component.html',
   styleUrls: ['./header-scoring-result.component.css']
 })
@@ -14,16 +14,16 @@ export class HeaderScoringResultComponent implements OnInit {
   @Input() leaderBoardDetails: any;
   startDate: any = 'JANUARY 10';
   endDate: any = '12, 2018';
-  name: string = 'ARTEM TEST 3 ROUND 9 HOLES';
+  name = 'ARTEM TEST 3 ROUND 9 HOLES';
   roundList: Array<any> = [];
-  courseName: string = '';
+  courseName = '';
 
   goBack() {
     this.location.back();
   }
 
   ngOnInit() {
-    let dummyDate = 171215;
+    const dummyDate = 171215;
     this.name = this.leaderBoardDetails.name ? this.leaderBoardDetails.name : this.name;
     this.startDate = this.leaderBoardDetails.startDate ? moment(this.leaderBoardDetails.startDate, 'YYMMDD').format('MMMM DD') : moment(dummyDate, 'YYMMDD').format('MMMM DD');
     this.endDate = this.leaderBoardDetails.endDate ? moment(this.leaderBoardDetails.endDate, 'YYMMDD').format('DD, YYYY') : moment(dummyDate, 'YYMMDD').format('DD, YYYY');
