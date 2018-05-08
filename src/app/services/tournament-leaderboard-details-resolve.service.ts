@@ -7,7 +7,7 @@ export class TournamentLeaderboardDetailsResolveService {
 
   constructor(private service: FetchDataService) { }
   resolve(route: ActivatedRouteSnapshot) {
-    return this.service.getTournamentLeaderBoardDetails();
+    return this.service.getTournamentLeaderBoardDetails(route.paramMap.get('id'));
   }
 
 }

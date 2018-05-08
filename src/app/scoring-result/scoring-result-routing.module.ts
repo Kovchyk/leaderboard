@@ -7,7 +7,7 @@ import { TournamentDetailsResolve } from '../services/tournament-details-resolve
 import { TournamentLeaderboardDetailsResolveService } from '../services/tournament-leaderboard-details-resolve.service';
 
 const scoringResultRoutes: Routes =[
-  { path: 'scoring-results',
+  { path: 'scoring-results/:id',
     component: ScoringResultComponent,
     resolve: {
       response: TournamentLeaderboardDetailsResolveService

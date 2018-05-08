@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FetchDataService } from '../../services/fetch-data.service';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
 
 @Component({
   selector: 'app-scoring-result',
@@ -9,7 +10,7 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class ScoringResultComponent implements OnInit {
 
-  constructor(private fetchDataService: FetchDataService, private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute) { }
   leaderBoardDetails: any;
 
   getTournamentLeaderBoardDetails() {

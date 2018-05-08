@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
 import { Location } from '@angular/common';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-header-scoring-result',
@@ -9,7 +10,7 @@ import { Location } from '@angular/common';
 })
 export class HeaderScoringResultComponent implements OnInit {
 
-  constructor(private location: Location) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   @Input() leaderBoardDetails: any;
   startDate: any = 'JANUARY 10';
@@ -17,9 +18,10 @@ export class HeaderScoringResultComponent implements OnInit {
   name = 'ARTEM TEST 3 ROUND 9 HOLES';
   roundList: Array<any> = [];
   courseName = '';
+  private id_tournament = this.route.snapshot.paramMap.get('id');
 
-  goBack() {
-    this.location.back();
+  goToPairings() {
+    this.router.navigate(['pairings/', this.id_tournament]);
   }
 
   ngOnInit() {

@@ -13,7 +13,7 @@ const appRoutes: Routes =[
       response: TournamentDetailsResolve
     }
   },
-  { path: 'scoring-results',
+  { path: 'scoring-results/:id',
     component: ScoringResultComponent,
     resolve: {
       response: TournamentLeaderboardDetailsResolveService

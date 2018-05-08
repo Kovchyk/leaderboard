@@ -10,7 +10,7 @@ import { Subscription } from 'rxjs/Subscription';
 })
 export class HeaderPairingComponent implements OnInit {
 
-  constructor(private router: Router, private activatedRoute: ActivatedRoute) { }
+  constructor(private router: Router, private route: ActivatedRoute) { }
 
   @Input() tournamentDetails: any;
   private startDate: any = 'JANUARY 10';
@@ -22,6 +22,7 @@ export class HeaderPairingComponent implements OnInit {
   private sub: Subscription;
   private selectValueSelected = 'Round1';
   private isSelectOpen = false;
+  private id_tournament = this.route.snapshot.paramMap.get('id');
 
   openCloseSelectoptions() {
     this.isSelectOpen = !this.isSelectOpen;
@@ -31,12 +32,12 @@ export class HeaderPairingComponent implements OnInit {
     this.roundCourseName = this.roundList[round - 1].courseName;
     this.round = round;
     this.selectValueSelected = 'Round' + this.round;
-    this.router.navigate(['/'], { queryParams: { round: this.round } });
+    this.router.navigate(['pairings/', this.id_tournament], { queryParams: { round: this.round } });
     this.openCloseSelectoptions();
   }
 
   ngOnInit() {
-    this.sub = this.activatedRoute.queryParams.subscribe(params => {
+    this.sub = this.route.queryParams.subscribe(params => {
       this.round = +params['round'] || 1;
       this.selectValueSelected = 'Round' + this.round;
     });

@@ -16,7 +16,7 @@ export class ContentScoringResultComponent implements OnInit {
   ngOnInit() {
     this.leaderBoardResultlist = this.leaderBoardDetails.resultList;
     this.numberOfRounds = this.leaderBoardDetails.numberOfRounds;
-    console.log(this.leaderBoardDetails);
+    console.log(this.leaderBoardResultlist);
   }
 
   createRange(number){
