@@ -6,7 +6,7 @@ import { PairingComponent } from '../components/pairing/pairing.component';
 import { TournamentDetailsResolve } from '../services/tournament-details-resolve.service';
 import { TournamentLeaderboardDetailsResolveService } from '../services/tournament-leaderboard-details-resolve.service';
 
-const appRoutes: Routes =[
+const appRoutes: Routes = [
   { path: 'pairings/:id',
     component: PairingComponent,
     resolve: {
@@ -19,7 +19,7 @@ const appRoutes: Routes =[
       response: TournamentLeaderboardDetailsResolveService
     }
   },
-  { path: '**', redirectTo:'pairings/:id' }
+  { path: '**', redirectTo: 'pairings' }
 ];
 
 @NgModule({
