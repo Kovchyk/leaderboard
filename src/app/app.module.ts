@@ -24,7 +24,7 @@ import { ContentPairingComponent } from './components/content-pairing/content-pa
     PairingComponent,
     ContentPairingComponent,
     FooterComponent,
-    SelectComponent
+    SelectComponent,
   ],
   imports: [
     BrowserModule,

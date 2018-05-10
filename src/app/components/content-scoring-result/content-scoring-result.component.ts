@@ -1,4 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-content-scoring-result',
@@ -6,12 +7,13 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./content-scoring-result.component.css']
 })
 export class ContentScoringResultComponent implements OnInit {
+  constructor(private route: ActivatedRoute) { }
 
   @Input() leaderBoardDetails: any;
-  leaderBoardResultlist: Array<any> = [];
-  numberOfRounds: number = 0;
+  private leaderBoardResultlist: Array<any> = [];
+  private numberOfRounds = 0;
+  private id_tournament = this.route.snapshot.paramMap.get('id');
 
-  constructor() { }
 
   ngOnInit() {
     this.leaderBoardResultlist = this.leaderBoardDetails.resultList;
@@ -19,9 +21,9 @@ export class ContentScoringResultComponent implements OnInit {
     console.log(this.leaderBoardResultlist);
   }
 
-  createRange(number){
-    var items: number[] = [];
-    for(var i = 1; i <= number; i++){
+  createRange(number) {
+    const items: number[] = [];
+    for (let i = 1; i <= number; i++) {
        items.push(i);
     }
     return items;

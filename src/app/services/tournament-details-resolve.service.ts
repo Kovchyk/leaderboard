@@ -3,7 +3,7 @@ import { Resolve, ActivatedRouteSnapshot, Router } from '@angular/router';
 import { FetchDataService } from '../services/fetch-data.service';
 
 @Injectable()
-export class TournamentDetailsResolve implements Resolve<any>{
+export class TournamentDetailsResolve implements Resolve<any> {
 
   constructor(private service: FetchDataService) { }
 

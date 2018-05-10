@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { ScoringResultRoutingModule } from '../scoring-result/scoring-result-routing.module';
 
 import { ScoringResultComponent } from '../components/scoring-result/scoring-result.component';
 import { HeaderScoringResultComponent } from '../components/header-scoring-result/header-scoring-result.component';
@@ -8,7 +9,8 @@ import { ScoringResultDetailsComponent } from '../components/scoring-result-deta
 
 @NgModule({
   imports: [
-    CommonModule
+    CommonModule,
+    ScoringResultRoutingModule
   ],
   declarations: [
     ScoringResultComponent,
