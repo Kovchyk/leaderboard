@@ -15,7 +15,7 @@ const scoringResultRoutes: Routes = [
       response: TournamentLeaderboardDetailsResolveService
     }
   },
-  { path: 'player-results/:id_tournament/:id_tournamentPlayer',
+  { path: 'scoring-results/:id_tournament/:id_tournamentPlayer',
     component: ScoringResultDetailsComponent,
     // resolve: {
     //   response: TournamentLeaderboardDetailsResolveService

@@ -13,7 +13,7 @@
       <div class="leadership_info" *ngFor="let model of leaderBoardResultlist">
         <div class="row" >
             <div class="col-xs-1 col-sm-1">{{ model.position }}</div>
-            <div class="col-xs-2 col-sm-{{8 - numberOfRounds}}"><a [routerLink]="['/player-results', id_tournament, model.id_tournamentPlayer]">{{ model.teamName ? model.teamName : model.firstName + " " + model.lastName }}</a></div>
+            <div class="col-xs-2 col-sm-{{8 - numberOfRounds}}"><a [routerLink]="['/scoring-results', id_tournament, model.id_tournamentPlayer]">{{ model.teamName ? model.teamName : model.firstName + " " + model.lastName }}</a></div>
             <div class="col-xs-2 col-sm-1">{{ model.holesPassed }}</div>
 
             <div class="col-xs-2 col-sm-1" [ngClass]="{'negative-value-color': (model.grossScoreToPar * 1 < 0)}">{{ model.grossScoreToPar }}</div>
