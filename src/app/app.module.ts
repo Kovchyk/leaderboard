@@ -5,17 +5,17 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
-import { HeaderPairingComponent } from './components/header-pairing/header-pairing.component';
+import { HeaderPairingComponent } from './pairing/header-pairing/header-pairing.component';
 
-import { PairingComponent } from './components/pairing/pairing.component';
-import { FooterComponent } from './components/footer/footer.component';
-import { SelectComponent } from './components/select/select.component';
+import { PairingComponent } from './pairing/main-pairing/pairing.component';
+import { FooterComponent } from './footer/footer.component';
+import { SelectComponent } from './pairing/select/select.component';
 
-import { AppRoutingModule } from './app-routing/app-routing.module';
-import { ScoringResultModule } from './scoring-result/scoring-result.module';
+import { AppRoutingModule } from './app-routing.module';
+import { ScoringModule } from './scoring/scoring.module';
 import { FetchDataService } from './services/fetch-data.service';
 
-import { ContentPairingComponent } from './components/content-pairing/content-pairing.component';
+import { ContentPairingComponent } from './pairing/content-pairing/content-pairing.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +30,7 @@ import { ContentPairingComponent } from './components/content-pairing/content-pa
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    ScoringResultModule,
+    ScoringModule,
     FormsModule
   ],
   providers: [
