@@ -1,0 +1,16 @@
+<div class="header">
+  <div class="header_footer">
+    <span class="header_footer-text">{{name + " - " + startDate + " - " + endDate}}</span>
+  </div>
+  <div class="header_buttons">
+    <div class="row">
+      <div class="col-sm-6 mb-3 mb-sm-0"><button type="button" [routerLink]="['/pairing', id_tournament]" class="btn header_btn btn-block btn-default">Pairings</button></div>
+      <div class="col-sm-6"><button type="button" class="btn header_btn btn-block btn-primary">Scoring - Results</button></div>
+    </div>
+  </div>
+  <div class="header_course">
+    <div class="header_course-text">
+      <span>{{courseName}}</span>
+    </div>
+  </div>
+</div>

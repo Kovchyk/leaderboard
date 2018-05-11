@@ -1,0 +1,43 @@
+.main-container {
+    padding: 10px 0;
+    border-top: 1px solid #8a8a8a;
+    border-bottom: 1px solid #8a8a8a;
+}
+.leadership {
+    box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.2);
+}
+.leadership_header {
+    color: #fff;
+    background: #8a8a8a;
+    text-align: center;
+}
+.leadership_header .row > div {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    border-right: 1px solid #818081;
+}
+.leadership_header .row > div:last-child {
+    border: none;
+}
+.leadership_info {
+    background: #fff;
+    text-align: center;
+}
+.leadership_info:nth-child(even) {
+    background: #d1d1d1;
+}
+.leadership_info .row {
+    display: flex;
+    justify-content: space-around;
+}
+.leadership_info .row > div {
+    padding-top: 7px;
+    border-right: 1px solid #818081;
+}
+.leadership_info > div :last-child {
+    border: none;
+}
+.leadership_player-name {
+    padding: 0 10px 7px 5px;
+    text-align: start;
+}

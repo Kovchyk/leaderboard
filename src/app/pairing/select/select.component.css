@@ -1,0 +1,33 @@
+select {
+    display: none;
+}
+.my-select {
+    position: relative;
+}
+.my-select_view {
+    padding: 15px 9px 13px 15px;
+    position: relative;
+    background: #fff;
+}
+.my-select_options {
+    position: absolute;
+    width: 100%;
+    background: #fff;
+    top: 51px;
+    padding: 5px 15px;
+    z-index: 9999;
+}
+.my-select_view, .my-select_option {
+    cursor: pointer;
+}
+.my-select_option {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+.my-select_menu-arrow {
+    position: absolute;
+    right: 20px;
+    bottom: 9px;
+    border: 10px solid transparent;
+    border-top: 10px solid #8a8a8a;
+}
