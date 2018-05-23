@@ -23,7 +23,7 @@
     background: #fff;
     text-align: center;
 }
-.leadership_info:nth-child(even) {
+.leadership_info:nth-child(odd) {
     background: #d1d1d1;
 }
 .leadership_info .row {

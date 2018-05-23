@@ -15,7 +15,7 @@ export class ContentPairingComponent implements OnInit {
   @Input() roundList: Array<any>;
   private selectedRound: Array<any>;
   private teeTimes: Array<any> = [];
-  private round = 0;
+  private round = 1;
   private sub: Subscription;
 
   ngOnInit() {
@@ -25,10 +25,12 @@ export class ContentPairingComponent implements OnInit {
       this.teeTimes = [];
       // moment(this.round_list.get(this.id_tournamentRound).get("startTime"), "HHmm").format("hh:mm A")
       this.selectedRound.forEach(value => {
+        console.log(value);
         this.teeTimes.push(
           {
-            dateTime: moment(value.dateTime, 'YYMMDDHHmmssZZ').format('hh:mm A'),
-            holeNumber: value.holeNumber ? value.holeNumber : '',
+            dateTime: value.dateTime ? moment(value.dateTime, 'YYMMDDHHmmssZZ').format('hh:mm A') :
+            moment(this.roundList[this.round - 1].roundDate, 'YYMMDDHHmmssZZ').format('hh:mm A'),
+            holeNumber: value.name ? value.name : '',
             playersList: value.players
           }
         );
