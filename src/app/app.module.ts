@@ -29,9 +29,9 @@ import { ContentPairingComponent } from './pairing/content-pairing/content-pairi
   imports: [
     BrowserModule,
     HttpClientModule,
-    AppRoutingModule,
     ScoringModule,
-    FormsModule
+    FormsModule,
+    AppRoutingModule,
   ],
   providers: [
     FetchDataService
