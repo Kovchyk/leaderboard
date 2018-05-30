@@ -49,7 +49,7 @@
 .header_course-select {
     padding-left: 0;
 }
-select {
+/* select {
     display: none;
 }
 .my-select {
@@ -80,4 +80,4 @@ select {
     bottom: 9px;
     border: 10px solid transparent;
     border-top: 10px solid #8a8a8a;
-}
+} */

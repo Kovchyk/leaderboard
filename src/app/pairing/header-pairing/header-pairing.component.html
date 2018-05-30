@@ -14,21 +14,7 @@
         <span>{{roundCourseName}}</span>
       </div>
       <div class="header_course-select col-sm-3 col-lg-2 ml-3 ml-sm-0">
-        <!-- <div class="my-select">
-          <div class="my-select_view" (click)="openCloseSelectoptions()">
-            <span>{{selectValueSelected}}</span>
-            <div class="my-select_menu-arrow"></div>
-          </div>
-          <div class="my-select_options" [style.display]="isSelectOpen ? 'block' : 'none'">
-            <div class="my-select_option" *ngFor="let round of roundList; let i = index" (click)="getRoundNumber(i + 1)">
-                Round{{i + 1}}
-            </div>
-          </div>
-        </div> -->
-        <app-custom-select [array]="roundList" [id_tournament]="id_tournament" [selectValueSelected]="selectValueSelected"></app-custom-select>
-        <select class="selectpicker show-menu-arrow" name="rounds" [(ngModel)]="round">
-          <option *ngFor="let round of roundList; let i = index" [value]="round.roundNumber">Round{{i + 1}}</option>
-        </select>
+        <app-custom-select [optionsArray]="selectOptions" [selectValueSelected]="selectValueSelected" (getValue)=getRoundInfo($event)></app-custom-select>
       </div>
     </div>
   </div>

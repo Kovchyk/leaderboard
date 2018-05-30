@@ -18,23 +18,19 @@ export class HeaderPairingComponent implements OnInit {
   private name = 'ARTEM TEST 3 ROUND 9 HOLES';
   private roundList: Array<any> = [];
   private round = 0;
+  private selectOptions: Array<any> = [];
   private roundCourseName = '';
   private sub: Subscription;
-  private selectValueSelected = 'Round1';
+  private selectValueSelected = '';
   private isSelectOpen = false;
   private id_tournament = this.route.snapshot.paramMap.get('id');
 
-  // openCloseSelectoptions() {
-  //   this.isSelectOpen = !this.isSelectOpen;
-  // }
-
-  // getRoundNumber(round) {
-  //   this.roundCourseName = this.roundList[round - 1].courseName;
-  //   this.round = round;
-  //   this.selectValueSelected = 'Round' + this.round;
-  //   this.router.navigate(['pairing/', this.id_tournament], { queryParams: { round: this.round } });
-  //   this.openCloseSelectoptions();
-  // }
+  getRoundInfo(val) {
+    const round = this.roundList[val].roundNumber;
+    this.roundCourseName = this.roundList[val].courseName;
+    this.selectValueSelected = this.selectOptions[val];
+    this.router.navigate(['pairing/', this.id_tournament], { queryParams: { round: round } });
+  }
 
   ngOnInit() {
     this.sub = this.route.queryParams.subscribe(params => {
@@ -49,6 +45,12 @@ export class HeaderPairingComponent implements OnInit {
     this.endDate = this.tournamentDetails.endDate ? moment(this.tournamentDetails.endDate, 'YYMMDD').format('DD, YYYY') : moment(dummyDate, 'YYMMDD').format('DD, YYYY');
     this.roundList = this.tournamentDetails.resultList;
     this.roundCourseName = this.roundList[this.round - 1].courseName;
+
+    this.roundList.forEach(element => {
+      const item = 'Round' + element.roundNumber;
+      this.selectOptions.push(item);
+    });
+
   }
 
 }

@@ -45,3 +45,6 @@
     padding: 15px 9px 13px 9px;
     height: 50px;
 }
+.header_course-select {
+    padding-left: 0;
+}
