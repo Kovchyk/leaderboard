@@ -11,15 +11,24 @@ export class ScoringResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute) { }
   leaderBoardDetails: any;
+  flightList: any;
 
   getTournamentLeaderBoardDetails() {
     this.route.data.subscribe(data => {
-      this.leaderBoardDetails = data.response;
+      this.leaderBoardDetails = data.response[0];
+      this.flightList = data.response[1];
     });
   }
 
+  // getFlightList() {
+  //   this.route.data.subscribe(data => {
+  //     this.flightList = data.response;
+  //   });
+  // }
+
   ngOnInit() {
     this.getTournamentLeaderBoardDetails();
+    // this.getFlightList();
   }
 
 }

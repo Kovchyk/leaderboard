@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 
 @Injectable()
 export class FetchDataService {
@@ -13,7 +13,13 @@ export class FetchDataService {
   }
 
   getTournamentLeaderBoardDetails(id) {
-    return this.http.get('https://leaderboard/proxy/TournamentPublicLeaderBoardDetails?id_tournament=' + id);
+    return forkJoin(
+      this.http.get('https://leaderboard/proxy/TournamentPublicLeaderBoardDetails?id_tournament=' + id),
+      this.http.get('https://leaderboard/proxy/TournamentPublicFlightList?id_tournament=' + id)
+    );
   }
 
+  getPublicFlightList(id) {
+    return this.http.get('https://leaderboard/proxy/TournamentPublicFlightList?id_tournament=' + id);
+  }
 }
