@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { FetchDataService } from '../../services/fetch-data.service';
 import { Router, ActivatedRoute, ParamMap } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
+import { FetchDataService } from '../../services/fetch-data.service';
 
 @Component({
   templateUrl: './scoring-result.component.html',
@@ -9,26 +8,19 @@ import { switchMap } from 'rxjs/operators';
 })
 export class ScoringResultComponent implements OnInit {
 
-  constructor(private route: ActivatedRoute) { }
-  leaderBoardDetails: any;
-  flightList: any;
+  constructor(private route: ActivatedRoute, private service: FetchDataService) { }
+  private leaderBoardDetails: any;
+  private flightList: any;
 
-  getTournamentLeaderBoardDetails() {
+  getScorecardDetails() {
     this.route.data.subscribe(data => {
       this.leaderBoardDetails = data.response[0];
-      this.flightList = data.response[1];
+      this.flightList = data.response[1].resultList;
     });
   }
 
-  // getFlightList() {
-  //   this.route.data.subscribe(data => {
-  //     this.flightList = data.response;
-  //   });
-  // }
-
   ngOnInit() {
-    this.getTournamentLeaderBoardDetails();
-    // this.getFlightList();
+    this.getScorecardDetails();
   }
 
 }

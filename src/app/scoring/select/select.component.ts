@@ -25,7 +25,7 @@ export class SelectComponent implements OnInit {
   }
 
   ngOnInit() {
-
+    console.log('Select init');
   }
 
 }

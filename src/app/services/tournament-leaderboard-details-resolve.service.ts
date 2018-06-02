@@ -7,7 +7,11 @@ export class TournamentLeaderboardDetailsResolveService {
 
   constructor(private service: FetchDataService) { }
   resolve(route: ActivatedRouteSnapshot) {
-    return this.service.getTournamentLeaderBoardDetails(route.paramMap.get('id'));
+
+    const id_tournamentFlight = +route.queryParams['id_flight'];
+    const id_tournamentHandicapFormat = route.queryParams['hdcpf'];
+    return this.service.getScorecardDetails(route.paramMap.get('id'), id_tournamentFlight, id_tournamentHandicapFormat);
+
   }
 
 }
