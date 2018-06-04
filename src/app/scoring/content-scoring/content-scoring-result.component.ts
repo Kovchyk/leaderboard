@@ -20,7 +20,7 @@ export class ContentScoringResultComponent implements OnInit {
   private id_tournamentHandicapFormat;
 
   ngOnInit() {
-
+    console.log('Scoring init');
     this.sub = this.route.queryParams.subscribe(params => {
       const id_tournamentFlight = +params['id_flight'];
       const id_tournamentHandicapFormat = params['hdcpf'];
@@ -29,6 +29,23 @@ export class ContentScoringResultComponent implements OnInit {
 
     this.leaderBoardResultlist = this.leaderBoardDetails.resultList;
     this.numberOfRounds = this.leaderBoardDetails.numberOfRounds;
+
+  }
+
+  create_scores_array(array) {
+      const scores_array = [];
+      for (let i = 0; i < this.numberOfRounds; i++) {
+        scores_array.push({});
+      }
+
+      for (let i = 0; i < scores_array.length; i++) {
+        if (array.roundScoreList[i]) {
+          scores_array.splice(array.roundScoreList[i].roundNumber - 1, 1, {score: array.roundScoreList[i].score});
+        }
+      }
+
+      return scores_array;
+
   }
 
   getLeaderoardDetails(id, id_flight, hdcp_format) {
@@ -41,6 +58,7 @@ export class ContentScoringResultComponent implements OnInit {
     for (let i = 1; i <= number; i++) {
        items.push(i);
     }
+
     return items;
   }
 }

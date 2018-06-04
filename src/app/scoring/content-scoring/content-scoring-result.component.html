@@ -1,6 +1,6 @@
 <div class="main-container">
     <div class="table-responsive table-shadow">
-      <table class="table table-hover">
+      <table class="table">
         <thead>
           <tr>
             <th>Pos.</th>
@@ -19,7 +19,7 @@
   
               <td [ngClass]="{'negative-value-color': (model.grossScoreToPar * 1 < 0)}">{{ model.grossScoreToPar == 0 ? 'E' : model.grossScoreToPar > 0 ? '+' + model.grossScoreToPar : model.grossScoreToPar}}</td>
   
-              <td *ngFor="let item of createRange(numberOfRounds); let i = index">{{ model.roundScoreList[i] ? model.roundScoreList[i].score : '' }}</td>
+              <td *ngFor="let item of create_scores_array(model)">{{ item.score ? item.score : '' }}</td>
   
               <td [ngClass]="{'negative-value-color': (model.grossScoreToPar * 1 < 0)}">{{ model.grossScore }}</td>
           </tr>

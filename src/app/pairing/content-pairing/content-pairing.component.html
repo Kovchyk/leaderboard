@@ -10,7 +10,7 @@
     <div class="leadership_info" *ngFor="let teeTime of teeTimes">
       <div class="row">
           <div class="col-3 col-md-2">{{teeTime.dateTime}}</div>
-          <div class="col-2 col-md-1">{{teeTime?.holeNumber}}</div>
+          <div class="col-2 col-md-1">{{teeTime.hole}}</div>
           <div class="col-7 col-md-9 player-names">
             <div class="leadership_player-name" *ngFor="let player of teeTime.playersList">{{player.firstName}} {{player.lastName}}</div>
           </div>

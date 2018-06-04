@@ -14,9 +14,3 @@ body {
     color: #333333;
     background-color: #e5e7e6;
 }
-tbody tr {
-  background: #fff;
-}
-tbody tr:nth-child(even) {
-  background: #d1d1d1;
-}

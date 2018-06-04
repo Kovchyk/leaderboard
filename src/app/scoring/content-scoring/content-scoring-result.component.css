@@ -27,12 +27,12 @@ thead tr th, tbody tr td {
     border-left: none;
     text-align: center;
 }
-/* tbody tr {
+tbody tr {
     background: #fff;
-} */
-/* tbody tr:nth-child(even) {
+} 
+tbody tr:nth-child(even) {
     background: #d1d1d1;
-} */
+}
 thead tr th, tbody tr td {
     border-right: 1px solid #818081;
     text-align: center;

@@ -30,7 +30,7 @@ export class ContentPairingComponent implements OnInit {
           {
             dateTime: value.dateTime ? moment(value.dateTime, 'YYMMDDHHmmssZZ').format('hh:mm A') :
             moment(this.roundList[this.round - 1].roundDate, 'YYMMDDHHmmssZZ').format('hh:mm A'),
-            holeNumber: value.name ? value.name : '',
+            hole: value.name ? value.name : value.holeNumber,
             playersList: value.players
           }
         );
