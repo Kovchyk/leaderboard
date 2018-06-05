@@ -14,13 +14,13 @@
         <tbody>
           <tr *ngFor="let model of leaderBoardResultlist">
               <td>{{ model.position }}</td>
-              <td class="name"><a [routerLink]="['/scoring', id_tournament, model.id_tournamentPlayer]">{{ model.teamName ? model.teamName : model.firstName + " " + model.lastName }}</a></td>
+              <td class="name"><a [routerLink]="['/scoring', id_tournament, model.id_tournamentPlayer ? model.id_tournamentPlayer : model.id_tournamentTeam]">{{ model.teamName ? model.teamName : model.firstName + " " + model.lastName }}</a></td>
               <td>{{ model.holesPassed }}</td>
-  
+
               <td [ngClass]="{'negative-value-color': (model.grossScoreToPar * 1 < 0)}">{{ model.grossScoreToPar == 0 ? 'E' : model.grossScoreToPar > 0 ? '+' + model.grossScoreToPar : model.grossScoreToPar}}</td>
-  
+
               <td *ngFor="let item of create_scores_array(model)">{{ item.score ? item.score : '' }}</td>
-  
+
               <td [ngClass]="{'negative-value-color': (model.grossScoreToPar * 1 < 0)}">{{ model.grossScore }}</td>
           </tr>
         </tbody>

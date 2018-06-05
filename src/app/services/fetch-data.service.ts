@@ -28,4 +28,10 @@ export class FetchDataService {
       this. getPublicFlightList(id)
     );
   }
+  getPlayerDetails(id) {
+    return this.http.get('https://leaderboard/proxy/TournamentPublicPlayerScorecardDetails?id_tournamentPlayer=' + id);
+  }
+  getTeamDetails(id) {
+    return this.http.get('https://leaderboard/proxy/TournamentPublicTeamScorecardDetails?id_tournamentTeam=' + id);
+  }
 }

@@ -27,7 +27,7 @@ export class HeaderScoringResultComponent implements OnInit {
   getRoundInfo(val) {
     const queryParams = this.flightRequest[val];
     this.selectValueSelected = this.selectOptions[val];
-    this.router.navigate(['scoring/', this.id_tournament], { queryParams: queryParams });
+    this.router.navigate(['scoring/', this.id_tournament, {test: 'test'}], { queryParams: queryParams });
   }
 
   ngOnInit() {
