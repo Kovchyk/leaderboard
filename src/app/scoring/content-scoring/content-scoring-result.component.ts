@@ -8,14 +8,16 @@ import { FetchDataService } from '../../services/fetch-data.service';
   styleUrls: ['./content-scoring-result.component.css']
 })
 export class ContentScoringResultComponent implements OnInit {
-  constructor(private route: ActivatedRoute, private service: FetchDataService) { }
+  constructor(private route: ActivatedRoute, private service: FetchDataService) {
+    console.log('Scoring init constructor');
+  }
 
   @Input() leaderBoardDetails: any;
   private leaderBoardResultlist: Array<any> = [];
-  private numberOfRounds = 0;
-  private id_tournament = +this.route.snapshot.paramMap.get('id');
-  private id_tournamentFlight;
-  private id_tournamentHandicapFormat;
+  private numberOfRounds: number;
+  private id_tournament: string = this.route.snapshot.paramMap.get('id');
+  private id_tournamentFlight: number;
+  private id_tournamentHandicapFormat: number;
 
   ngOnInit() {
     console.log('Scoring init');

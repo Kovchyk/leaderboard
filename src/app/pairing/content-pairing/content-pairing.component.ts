@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as moment from 'moment';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-content-pairing',
@@ -16,14 +15,12 @@ export class ContentPairingComponent implements OnInit {
   private selectedRound: Array<any>;
   private teeTimes: Array<any> = [];
   private round = 1;
-  private sub: Subscription;
 
   ngOnInit() {
-    this.sub = this.activatedRoute.queryParams.subscribe(params => {
+    this.activatedRoute.queryParams.subscribe(params => {
       this.round = +params['round'] || 1;
       this.selectedRound = this.roundList[this.round - 1].teeTimes;
       this.teeTimes = [];
-      // moment(this.round_list.get(this.id_tournamentRound).get("startTime"), "HHmm").format("hh:mm A")
       this.selectedRound.forEach(value => {
         console.log(value);
         this.teeTimes.push(

@@ -23,14 +23,21 @@ export class HeaderScoringResultComponent implements OnInit {
   private flightRequest: Array<any> = [{hdcpf: 1}, {hdcpf: 2}];
   private selectValueSelected = '';
   private id_tournament = this.route.snapshot.paramMap.get('id');
+  private id_tournamentFlight: number;
+  private id_tournamentHandicapFormat: number;
 
   getRoundInfo(val) {
     const queryParams = this.flightRequest[val];
     this.selectValueSelected = this.selectOptions[val];
-    this.router.navigate(['scoring/', this.id_tournament, {test: 'test'}], { queryParams: queryParams });
+    this.router.navigate(['scoring/', this.id_tournament], { queryParams: queryParams });
   }
 
   ngOnInit() {
+    this.route.queryParams.subscribe(params => {
+      this.id_tournamentFlight = +params['id_flight'];
+      this.id_tournamentHandicapFormat = params['hdcpf'];
+    });
+
     this.flightList.forEach(flight => {
       this.selectOptions.push(flight.flightName + '-Gross');
       this.selectOptions.push(flight.flightName + '-Net');
@@ -51,6 +58,16 @@ export class HeaderScoringResultComponent implements OnInit {
     this.roundList = this.leaderBoardDetails.resultList[0].roundScoreList;
     this.roundCourseName = this.leaderBoardDetails.courseName;
     this.selectValueSelected = this.selectOptions[0];
+    this.flightRequest.forEach( (option, i) => {
+
+      if (option.id_flight && option.id_flight === this.id_tournamentFlight && option.hdcpf === +this.id_tournamentHandicapFormat) {
+        this.selectValueSelected = this.selectOptions[i];
+      } else if (!option.id_flight && option.hdcpf === +this.id_tournamentHandicapFormat) {
+        this.selectValueSelected = this.selectOptions[i];
+      }
+
+    });
+
   }
 
 }

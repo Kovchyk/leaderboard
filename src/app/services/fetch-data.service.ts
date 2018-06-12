@@ -8,19 +8,19 @@ export class FetchDataService {
   constructor(private http: HttpClient) { }
 
   getTournamentDetails(id) {
-    return this.http.get('https://leaderboard/proxy/TournamentPublicDetails?id_tournament=' + id);
+    return this.http.get('https://leaderboard/proxy/TournamentPublicDetails?tournamentSecretKey=' + id);
   }
   getPublicLeaderBoardDetails(id, id_flight?, hdcp_format?) {
     id_flight = id_flight || '';
     hdcp_format = hdcp_format || 1;
 
     return this.http.get(
-      'https://leaderboard/proxy/TournamentPublicLeaderBoardDetails?id_tournament=' + id +
+      'https://leaderboard/proxy/TournamentPublicLeaderBoardDetails?tournamentSecretKey=' + id +
       '&id_tournamentFlight=' + id_flight + '&id_tournamentHandicapFormat=' + hdcp_format
     );
   }
   getPublicFlightList(id) {
-    return this.http.get('https://leaderboard/proxy/TournamentPublicFlightList?id_tournament=' + id);
+    return this.http.get('https://leaderboard/proxy/TournamentPublicFlightList?tournamentSecretKey=' + id);
   }
   getScorecardDetails(id, id_flight?, hdcp_format?) {
     return forkJoin(

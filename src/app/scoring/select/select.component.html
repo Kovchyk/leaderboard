@@ -1,7 +1,7 @@
 <div class="my-select">
   <div class="my-select_view" (click)="openCloseSelectoptions()">
-    <span>{{selectValueSelected}}</span>
-    <div class="my-select_menu-arrow"></div>
+    <div class="my-select_value-selected"><span>{{selectValueSelected}}</span></div>
+    <div class="my-select_menu-arrow"><span></span></div>
   </div>
   <div class="my-select_options" [style.display]="isSelectOpen ? 'block' : 'none'">
     <div class="my-select_option" *ngFor="let item of optionsArray; let i = index" (click)="emitValue(i)">
