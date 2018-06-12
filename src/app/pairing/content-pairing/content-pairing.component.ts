@@ -12,9 +12,9 @@ export class ContentPairingComponent implements OnInit {
   constructor(private activatedRoute: ActivatedRoute) { }
 
   @Input() roundList: Array<any>;
-  private selectedRound: Array<any>;
-  private teeTimes: Array<any> = [];
-  private round = 1;
+  selectedRound: Array<any>;
+  teeTimes: Array<any> = [];
+  round = 1;
 
   ngOnInit() {
     this.activatedRoute.queryParams.subscribe(params => {

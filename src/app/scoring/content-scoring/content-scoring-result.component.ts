@@ -13,11 +13,11 @@ export class ContentScoringResultComponent implements OnInit {
   }
 
   @Input() leaderBoardDetails: any;
-  private leaderBoardResultlist: Array<any> = [];
-  private numberOfRounds: number;
-  private id_tournament: string = this.route.snapshot.paramMap.get('id');
-  private id_tournamentFlight: number;
-  private id_tournamentHandicapFormat: number;
+  leaderBoardResultlist: Array<any> = [];
+  numberOfRounds: number;
+  id_tournament: string = this.route.snapshot.paramMap.get('id');
+  id_tournamentFlight: number;
+  id_tournamentHandicapFormat: number;
 
   ngOnInit() {
     console.log('Scoring init');

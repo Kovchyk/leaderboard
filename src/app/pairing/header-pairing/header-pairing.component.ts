@@ -13,17 +13,17 @@ export class HeaderPairingComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute) { }
 
   @Input() tournamentDetails: any;
-  private startDate: any = 'JANUARY 10';
-  private endDate: any = '12, 2018';
-  private name = 'ARTEM TEST 3 ROUND 9 HOLES';
-  private roundList: Array<any> = [];
-  private round = 0;
-  private selectOptions: Array<any> = [];
-  private roundCourseName = '';
-  private sub: Subscription;
-  private selectValueSelected = '';
-  private isSelectOpen = false;
-  private id_tournament = this.route.snapshot.paramMap.get('id');
+  startDate: any = 'JANUARY 10';
+  endDate: any = '12, 2018';
+  name = 'ARTEM TEST 3 ROUND 9 HOLES';
+  roundList: Array<any> = [];
+  round = 0;
+  selectOptions: Array<any> = [];
+  roundCourseName = '';
+  sub: Subscription;
+  selectValueSelected = '';
+  isSelectOpen = false;
+  id_tournament = this.route.snapshot.paramMap.get('id');
 
   getRoundInfo(val) {
     const round = this.roundList[val].roundNumber;

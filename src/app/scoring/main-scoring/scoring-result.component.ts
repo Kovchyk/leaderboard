@@ -9,8 +9,8 @@ import { FetchDataService } from '../../services/fetch-data.service';
 export class ScoringResultComponent implements OnInit {
 
   constructor(private route: ActivatedRoute, private service: FetchDataService) { }
-  private leaderBoardDetails: any;
-  private flightList: any;
+  leaderBoardDetails: any;
+  flightList: any;
 
   getScorecardDetails() {
     this.route.data.subscribe(data => {

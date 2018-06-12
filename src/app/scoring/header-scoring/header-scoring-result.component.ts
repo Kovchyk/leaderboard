@@ -13,16 +13,16 @@ export class HeaderScoringResultComponent implements OnInit {
 
   @Input() leaderBoardDetails: any;
   @Input() flightList: any;
-  private startDate: any = 'JANUARY 10';
-  private endDate: any = '12, 2018';
-  private name = 'ARTEM TEST 3 ROUND 9 HOLES';
+  startDate: any = 'JANUARY 10';
+  endDate: any = '12, 2018';
+  name = 'ARTEM TEST 3 ROUND 9 HOLES';
   private roundList: Array<any> = [];
   private round = 0;
-  private roundCourseName = '';
-  private selectOptions: Array<any> = ['Gross', 'Net'];
+  roundCourseName = '';
+  selectOptions: Array<any> = ['Gross', 'Net'];
   private flightRequest: Array<any> = [{hdcpf: 1}, {hdcpf: 2}];
-  private selectValueSelected = '';
-  private id_tournament = this.route.snapshot.paramMap.get('id');
+  selectValueSelected = '';
+  id_tournament = this.route.snapshot.paramMap.get('id');
   private id_tournamentFlight: number;
   private id_tournamentHandicapFormat: number;
 

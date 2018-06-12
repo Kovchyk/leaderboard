@@ -13,7 +13,7 @@ export class SelectComponent implements OnInit {
   @Input() selectValueSelected = '';
   @Output() getValue = new EventEmitter<any>();
 
-  private isSelectOpen = false;
+  isSelectOpen = false;
 
   openCloseSelectoptions() {
     this.isSelectOpen = !this.isSelectOpen;
